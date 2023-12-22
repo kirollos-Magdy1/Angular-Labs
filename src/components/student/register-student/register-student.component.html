@@ -1,0 +1,23 @@
+<div class="form">
+  <input [(ngModel)]="userName" placeholder="Name" type="text" />
+  <input [(ngModel)]="userAge" placeholder="Age" type="text" />
+  <input type="button" value="ADD" (click)="FireNow()" />
+
+
+  @if ( !AgeValid && userAge ) {
+    <p style="color: red;">Age Not Valid</p>
+  }@else {
+    @if (userAge) {
+      <p style="color: green;">Age Valid</p>
+    }
+  }
+
+  @if ( !NameValid && userName ) {
+    <p style="color: red;">Name Not Valid</p>
+  }@else {
+    @if (userName) {
+      <p style="color: green;">Name Valid</p>
+    }
+  }
+
+</div>

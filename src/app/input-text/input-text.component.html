@@ -1,0 +1,9 @@
+<input
+  type="text"
+  placeholder="enter your name"
+  [value]="name"
+  (input)="changName($event)"
+/>
+<input type="button" value="reset" (click)="resetName()" />
+
+<p>Name: {{ name }}</p>
