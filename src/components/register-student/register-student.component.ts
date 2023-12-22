@@ -1,5 +1,7 @@
+import { compileNgModule } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { retry } from 'rxjs';
 
 @Component({
   selector: 'app-register-student',
@@ -10,11 +12,16 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 
 export class RegisterStudentComponent {
-  nameReq=""
+  nameValMsg="Name min length of 3 litters";
+  ageValMsg = "20 <= Age <= 30";
+  emailValMsg = "email invalid";
+
 
   myRegForm = new FormGroup({
-    name:new FormControl(null,[Validators.required]),
-    age:new FormControl(null,[Validators.min(20), Validators.max(30)])
+    name:new FormControl(null,[Validators.required, Validators.minLength(3)]),
+    age:new FormControl(null,[Validators.required, Validators.min(20), Validators.max(30)]),
+    email:new FormControl(null,[Validators.required, Validators.email])
+
   })
 
   get NameValid(){
@@ -23,18 +30,55 @@ export class RegisterStudentComponent {
   get AgeValid(){
     return this.myRegForm.controls.age.valid
   }
+  get EmailValid(){
+    return this.myRegForm.controls.email.valid
+  }
+
+  get formValid() {
+    return this.myRegForm.valid;
+  }
+  
+
+  get NameTouched() {
+    return !this.myRegForm.controls.name.untouched
+  }
+
+  get NameEmpty() {
+    return !this.myRegForm.controls.name.value
+  }
+  get AgeEmpty() {  
+    return !this.myRegForm.controls.age.value
+  }
+  
+  get EmailEmpty() {  
+    return !this.myRegForm.controls.email.value
+  }
+
+  get formDirty() {
+    return this.myRegForm.dirty;
+  }
+
 
   submitData(){
     if(this.myRegForm.valid){
+      console.log('valid');
       console.log(this.myRegForm);
-      console.log(this.myRegForm.value);
-      console.log(this.myRegForm.valid);
-      console.log("Name Valid: ",this.myRegForm.controls.name.valid);
-      console.log("Age Valid: ",this.myRegForm.controls.age.valid);
+      // this.myRegForm.controls.name.setValue(null);
+      // this.myRegForm.controls.age.setValue(null);
+      // this.myRegForm.controls.email.setValue(null);
+
+
+
     }else{
-      this.nameReq = "Name Required"
+      console.log('Invalid');
+      console.log(this.myRegForm);
+      
+      if(!this.myRegForm.controls.name.valid) console.log(this.nameValMsg)
+      if(!this.myRegForm.controls.age.valid) console.log(this.ageValMsg)
+      if(!this.myRegForm.controls.email.valid) console.log(this.emailValMsg)
+
+
     }
 
   }
 }
-//////////////////////////////////////////////////
