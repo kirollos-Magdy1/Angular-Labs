@@ -3,7 +3,7 @@
   <div class="form-group d-flex m-3">
     <label class="w-25">Name</label>
     <input  formControlName="name" class="form-control w-50" type="text">
-    @if (!NameValid && !NameEmpty ) {
+    @if (!NameValid && !NameEmpty) {
       <p style="color: red;">{{nameValMsg}}</p>
     }
   </div>
@@ -28,8 +28,6 @@
   <div class="form-group m-3 text-center">
     <input class="btn btn-outline-dark"  type="submit" value="ADD">
   </div>
-
-  <button class="btn btn-secondary">test</button>
 
 </form>
 

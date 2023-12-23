@@ -15,7 +15,7 @@ export class RegisterStudentComponent {
   nameValMsg="Name min length of 3 litters";
   ageValMsg = "20 <= Age <= 30";
   emailValMsg = "email invalid";
-
+  isFormSubmitted = false;
 
   myRegForm = new FormGroup({
     name:new FormControl(null,[Validators.required, Validators.minLength(3)]),
@@ -39,7 +39,11 @@ export class RegisterStudentComponent {
   }
   
 
-  get NameTouched() {
+  get formTouched() {
+    return !this.myRegForm.untouched
+  }
+
+  get nameTouched() {
     return !this.myRegForm.controls.name.untouched
   }
 
@@ -58,20 +62,26 @@ export class RegisterStudentComponent {
     return this.myRegForm.dirty;
   }
 
+  get FormSubmitted() {
+    return this.isFormSubmitted;
+  }
+
 
   submitData(){
     if(this.myRegForm.valid){
       console.log('valid');
       console.log(this.myRegForm);
-      // this.myRegForm.controls.name.setValue(null);
-      // this.myRegForm.controls.age.setValue(null);
-      // this.myRegForm.controls.email.setValue(null);
+      this.isFormSubmitted = true;
+      this.myRegForm.controls.name.setValue(null);
+      this.myRegForm.controls.age.setValue(null);
+      this.myRegForm.controls.email.setValue(null);
 
 
 
     }else{
       console.log('Invalid');
       console.log(this.myRegForm);
+      this.isFormSubmitted = true;
       
       if(!this.myRegForm.controls.name.valid) console.log(this.nameValMsg)
       if(!this.myRegForm.controls.age.valid) console.log(this.ageValMsg)
