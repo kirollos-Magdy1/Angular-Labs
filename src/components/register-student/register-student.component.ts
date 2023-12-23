@@ -1,7 +1,6 @@
 import { compileNgModule } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { retry } from 'rxjs';
 
 @Component({
   selector: 'app-register-student',
@@ -15,7 +14,8 @@ export class RegisterStudentComponent {
   nameValMsg="Name min length of 3 litters";
   ageValMsg = "20 <= Age <= 30";
   emailValMsg = "email invalid";
-  isFormSubmitted = false;
+  
+  nameInitialValue = null;
 
   myRegForm = new FormGroup({
     name:new FormControl(null,[Validators.required, Validators.minLength(3)]),
@@ -44,8 +44,26 @@ export class RegisterStudentComponent {
   }
 
   get nameTouched() {
-    return !this.myRegForm.controls.name.untouched
+    return this.myRegForm.controls.name.touched;
   }
+
+
+
+  get nameValChanged() {
+    return this.myRegForm.controls.name.dirty;
+  }
+
+  get ageValChanged() {
+    return this.myRegForm.controls.age.dirty;
+
+  }
+
+
+  get emailValChanged() {
+    return this.myRegForm.controls.email.dirty;
+
+  }
+  
 
   get NameEmpty() {
     return !this.myRegForm.controls.name.value
@@ -62,27 +80,19 @@ export class RegisterStudentComponent {
     return this.myRegForm.dirty;
   }
 
-  get FormSubmitted() {
-    return this.isFormSubmitted;
+  get nameStateChanged() {
+    const nameControl = this.myRegForm.controls.name;
+    return nameControl.value != this.nameInitialValue;
   }
 
 
   submitData(){
     if(this.myRegForm.valid){
-      console.log('valid');
       console.log(this.myRegForm);
-      this.isFormSubmitted = true;
-      this.myRegForm.controls.name.setValue(null);
-      this.myRegForm.controls.age.setValue(null);
-      this.myRegForm.controls.email.setValue(null);
-
-
+      this.myRegForm.reset();
 
     }else{
       console.log('Invalid');
-      console.log(this.myRegForm);
-      this.isFormSubmitted = true;
-      
       if(!this.myRegForm.controls.name.valid) console.log(this.nameValMsg)
       if(!this.myRegForm.controls.age.valid) console.log(this.ageValMsg)
       if(!this.myRegForm.controls.email.valid) console.log(this.emailValMsg)

@@ -3,16 +3,16 @@
   <div class="form-group d-flex m-3">
     <label class="w-25">Name</label>
     <input  formControlName="name" class="form-control w-50" type="text">
-    @if (!NameValid && !NameEmpty) {
-      <p style="color: red;">{{nameValMsg}}</p>
+    @if (!NameValid && nameValChanged ) {
+      <p class = "error" style="color: red;">{{nameValMsg}}</p>
     }
   </div>
   <!-- User Age --> 
   <div class="form-group d-flex m-3">
     <label class="w-25">Age</label>
     <input formControlName="age" class="form-control w-50" type="number">
-    @if (!AgeValid && !AgeEmpty ) {
-      <p style="color: red;"> {{ageValMsg}}</p>
+    @if (!AgeValid && ageValChanged ) {
+      <p class = "error" style="color: red;"> {{ageValMsg}}</p>
     }
   </div>
 
@@ -20,8 +20,8 @@
   <div class="form-group d-flex m-3">
     <label class="w-25">Emali</label>
     <input formControlName="email" class="form-control w-50" type="email">
-    @if (!EmailValid && !EmailEmpty) {
-      <p style="color: red;"> {{emailValMsg}}</p>
+    @if (!EmailValid && emailValChanged) {
+      <p class = "error" style="color: red;"> {{emailValMsg}}</p>
     }
   </div>
   <!-- Submit -->
