@@ -1,0 +1,6 @@
+@for (std of AllStudents; track std.id) {
+  <div class="w-75 text-center m-auto alert alert-primary mt-1">
+    <p>Name:{{std.name}}</p>
+    <p>Email:<a routerLink="/students/{{std.id}}">{{std.email}}</a></p>
+  </div>
+}

@@ -1,5 +1,5 @@
 {
-  "users": [
+  "students": [
     {
       "id": 1,
       "name": "adam",
@@ -79,6 +79,13 @@
       "email": "jack@gmail.com",
       "phone": "0101010101",
       "address": "707 boulevard"
+    },
+    {
+      "name": "mel",
+      "age": "Eos sed adipisicing ",
+      "email": "Elit beatae sit ius",
+      "phone": "Suscipit rerum ut et",
+      "id": 11
     }
   ],
   "Inst": []

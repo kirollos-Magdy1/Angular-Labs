@@ -1,0 +1,5 @@
+<input #username class="d-block m-auto text-center" type="text" placeholder="Name">
+<input #userage class="d-block m-auto text-center" type="text" placeholder="Age">
+<input #useremail class="d-block m-auto text-center" type="text" placeholder="Email">
+<input #userphone class="d-block m-auto text-center" type="text" placeholder="Phone">
+<input type="button" value="ADD" (click)="AddStudent(username.value,userage.value, useremail.value, userphone.value)">

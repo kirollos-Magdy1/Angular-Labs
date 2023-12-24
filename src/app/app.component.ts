@@ -3,14 +3,14 @@ import { FormsModule } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/routing/header/header.component';
-import { RegisterStudentComponent } from './components/register-student/register-student.component';
+import { HeaderComponent } from './components/header/header.component';
+import { StudentsComponent } from './components/students/students.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterOutlet, HeaderComponent,RegisterStudentComponent],
+  imports: [FormsModule, CommonModule, RouterOutlet, HeaderComponent, StudentsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

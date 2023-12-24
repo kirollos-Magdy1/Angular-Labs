@@ -1,0 +1,10 @@
+<!-- <div *ngIf="oneStudent">
+</div> -->
+@if (oneStudent) {
+  <h1>Welcome ya {{oneStudent.name}}</h1>
+  <!-- <p>UserName: {{oneStudent.username}}</p> -->
+  <p>Email: {{oneStudent.email}}</p>
+  <!-- <p>Address: {{oneStudent.address.street}}, {{oneStudent.address.city}}</p> -->
+}@else{
+  <p class="alert alert-warning">Loading ....</p>
+}

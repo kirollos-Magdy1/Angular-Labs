@@ -7,11 +7,7 @@ import { Injectable } from '@angular/core';
 export class DemoService {
 
   constructor(private myClient:HttpClient) {}
-  // private URL_DB = "https://jsonplaceholder.typicode.com/users";
-  private URL_DB = "http://localhost:3000/users";
-  // private Students_DB = "http://localhost:3000/students";
-  // private Instructors_DB = "http://localhost:3000/instructors";
-  // http://localhost:3000/students
+  private URL_DB = "http://localhost:3001/students";
 
   getAllStudents(){
     return this.myClient.get(this.URL_DB);
