@@ -14,7 +14,7 @@ export class RegisterStudentComponent {
   nameValMsg="Name min length of 3 litters";
   ageValMsg = "20 <= Age <= 30";
   emailValMsg = "email invalid";
-  
+  submitted = false;
   nameInitialValue = null;
 
   myRegForm = new FormGroup({
@@ -25,31 +25,27 @@ export class RegisterStudentComponent {
   })
 
   get NameValid(){
+    
     return this.myRegForm.controls.name.valid
   }
   get AgeValid(){
+
     return this.myRegForm.controls.age.valid
   }
   get EmailValid(){
+
     return this.myRegForm.controls.email.valid
   }
 
-  get formValid() {
-    return this.myRegForm.valid;
-  }
   
 
-  get formTouched() {
-    return !this.myRegForm.untouched
+  get isSubmitted(){
+    return this.submitted;
   }
-
-  get nameTouched() {
-    return this.myRegForm.controls.name.touched;
-  }
-
 
 
   get nameValChanged() {
+    
     return this.myRegForm.controls.name.dirty;
   }
 
@@ -65,34 +61,24 @@ export class RegisterStudentComponent {
   }
   
 
-  get NameEmpty() {
-    return !this.myRegForm.controls.name.value
-  }
-  get AgeEmpty() {  
-    return !this.myRegForm.controls.age.value
-  }
-  
-  get EmailEmpty() {  
-    return !this.myRegForm.controls.email.value
-  }
 
-  get formDirty() {
-    return this.myRegForm.dirty;
-  }
-
-  get nameStateChanged() {
-    const nameControl = this.myRegForm.controls.name;
-    return nameControl.value != this.nameInitialValue;
-  }
+  // get nameStateChanged() {
+  //   const nameControl = this.myRegForm.controls.name;
+  //   return nameControl.value != this.nameInitialValue;
+  // }
 
 
   submitData(){
+    this.submitted = true;
     if(this.myRegForm.valid){
-      console.log(this.myRegForm);
+      console.log(this.myRegForm);      
       this.myRegForm.reset();
+      this.submitted = false;
+
 
     }else{
       console.log('Invalid');
+      // this.NameValid();
       if(!this.myRegForm.controls.name.valid) console.log(this.nameValMsg)
       if(!this.myRegForm.controls.age.valid) console.log(this.ageValMsg)
       if(!this.myRegForm.controls.email.valid) console.log(this.emailValMsg)
