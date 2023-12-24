@@ -20,4 +20,12 @@ export class DemoService {
   AddNewStudent(newStd:any){
     return this.myClient.post(this.URL_DB,newStd);
   }
+
+  UpdateStudent(id:number,updatedStd:any){
+    return this.myClient.patch(this.URL_DB+'/'+id,updatedStd);
+  }
+
+  DeleteStudent(id:number){
+    return this.myClient.delete(this.URL_DB+'/'+id);
+  }
 }

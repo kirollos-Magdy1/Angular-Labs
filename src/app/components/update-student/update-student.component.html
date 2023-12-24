@@ -1,0 +1,49 @@
+<p>update-student works!</p>
+
+
+@if (oneStudent) {
+
+    <div>
+        
+      <div class="card text-center m-auto" style="width: 18rem;">        
+      
+        <div class="card-header">
+        <label for="">id:</label>
+        <span class="text-primary">{{oneStudent.id}}</span>
+      
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><label for="">name:</label>
+          <input #username class="text-primary" value="{{oneStudent.name}}" /></li>      
+        
+          <li class="list-group-item"><label for="">email: </label>
+
+          <input #useremail class="text-primary" value="{{oneStudent.email}}" /> </li>
+        <li class="list-group-item"><label for="">address: </label>
+          <input class="text-primary" value="{{oneStudent.address}}" /> </li>
+        <li class="list-group-item"> <div>
+          <label for="">age: </label>
+          <input #userage class="text-primary" value="{{oneStudent.age}}" /> 
+        </div></li>
+        <li class="list-group-item">
+          <label for="">phone: </label>
+          <input #userphone class="text-primary" value="{{oneStudent.phone}}"/>
+        </li>
+      </ul>
+      <input type="button" class= "btn mt-3 btn-outline-success"
+       value="Update" 
+       (click)="UpdateStudent(username.value, userage.value, useremail.value, userphone.value)">
+    </div>
+    
+    
+    </div>
+  
+  
+  
+    
+  }
+  @else{
+    <p class="alert alert-warning">Loading ....</p>
+  }
+  
+  

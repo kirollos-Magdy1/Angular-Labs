@@ -1,10 +1,39 @@
-<!-- <div *ngIf="oneStudent">
-</div> -->
 @if (oneStudent) {
-  <h1>Welcome ya {{oneStudent.name}}</h1>
-  <!-- <p>UserName: {{oneStudent.username}}</p> -->
-  <p>Email: {{oneStudent.email}}</p>
-  <!-- <p>Address: {{oneStudent.address.street}}, {{oneStudent.address.city}}</p> -->
-}@else{
+
+  <div>
+      
+    <div class="card text-center m-auto" style="width: 18rem;">        
+    
+      <div class="card-header">
+      <label for="">id:</label>
+      <span class="text-primary"> {{oneStudent.id}}</span>
+    
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><label for="">name:</label>
+        <span class="text-primary"> {{oneStudent.name}}</span></li>      
+      <li class="list-group-item"><label for="">email: </label>
+        <span class="text-primary"> {{oneStudent.email}}</span></li>
+      <li class="list-group-item"><label for="">address: </label>
+        <span class="text-primary"> {{oneStudent.address}}</span></li>
+      <li class="list-group-item"> <div>
+        <label for="">age: </label>
+        <span class="text-primary"> {{oneStudent.age}}</span>
+      </div></li>
+      <li class="list-group-item">
+        <label for="">phone: </label>
+        <span class="text-primary"> {{oneStudent.phone}}</span>
+      </li>
+    </ul>
+  </div>
+
+  </div>
+
+
+
+  
+}
+@else{
   <p class="alert alert-warning">Loading ....</p>
 }
+
