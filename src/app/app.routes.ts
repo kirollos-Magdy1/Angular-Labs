@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { StudentsComponent } from '../components/routing/students/students.component';
-import { StudentDetailsComponent } from '../components/routing/student-details/student-details.component';
-import { ProfileComponent } from '../components/routing/profile/profile.component';
-import { ErrorComponent } from '../components/routing/error/error.component';
-import { RegisterStudentComponent } from '../components/register-student/register-student.component';
+import { RegisterStudentComponent } from './components/register-student/register-student.component';
+import { StudentsComponent } from './components/routing/students/students.component';
+import { StudentDetailsComponent } from './components/routing/student-details/student-details.component';
+import { ProfileComponent } from './components/routing/profile/profile.component';
+import { ErrorComponent } from './components/routing/error/error.component';
 
 
 export const routes: Routes = [

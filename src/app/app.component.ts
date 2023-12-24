@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { RegisterStudentComponent } from '../components/register-student/register-student.component';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../components/routing/header/header.component';
+import { HeaderComponent } from './components/routing/header/header.component';
+import { RegisterStudentComponent } from './components/register-student/register-student.component';
 
 
 @Component({
