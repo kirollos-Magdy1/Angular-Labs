@@ -25,7 +25,10 @@ export class DemoService {
     return this.myClient.patch(this.URL_DB+'/'+id,updatedStd);
   }
 
+
   DeleteStudent(id:number){
     return this.myClient.delete(this.URL_DB+'/'+id);
   }
+
+
 }

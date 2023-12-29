@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {  Router, RouterModule } from '@angular/router';
 import { DemoService } from '../../Services/demo.service';
-import { compileNgModule } from '@angular/compiler';
 import { OneStudentComponent } from '../one-student/one-student.component';
+import { CommonModule } from '@angular/common';
+import { CustomDirective } from '../../Directives/custom.directive';
 
   @Component({
     selector: 'app-students',
     standalone: true,
-    imports: [HttpClientModule, RouterModule, OneStudentComponent],
+    imports: [HttpClientModule, RouterModule, OneStudentComponent, CommonModule, CustomDirective],
     providers:[DemoService],
     templateUrl: './students.component.html',
     styleUrl: './students.component.css'
@@ -18,13 +19,11 @@ import { OneStudentComponent } from '../one-student/one-student.component';
     constructor(private myService:DemoService, private router:Router){}
     AllStudents:any;
 
+    updateStudents(newStds:any) {
+      this.AllStudents = newStds;
+    }
 
-    ngOnInit(): void {
-      // console.log(this.myService.getAllStudents())//.toPromise().then((data)=>{}).catch((err)=>{})
-      // this.myService.getAllStudents().subscribe(
-      //     (data)=>{console.log(data)},
-      //     ()=>{console.log("7asal Error")}
-      //   )
+    ngOnInit(): void {      
       this.myService.getAllStudents().subscribe({
         next:(data)=>{
           // console.log(data)
@@ -34,6 +33,11 @@ import { OneStudentComponent } from '../one-student/one-student.component';
         error:()=>{console.log("7asal Error")}
       })
     }
+    
+    onDeleteStudent(newStds: any) {
+      this.AllStudents = newStds;      
+  }
+}
 
     // DeleteStudent(id:number){
     //   console.log(id);
@@ -54,4 +58,3 @@ import { OneStudentComponent } from '../one-student/one-student.component';
     //     }
     //   );
     // }
-  }

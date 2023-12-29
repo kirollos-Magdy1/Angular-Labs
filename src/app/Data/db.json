@@ -1,40 +1,53 @@
 {
   "students": [
     {
-      "name": "Corporis voluptas et",
-      "age": "Est tempore elit ",
-      "email": "Dolores ut unde ut e",
-      "phone": "Voluptas omnis maxim",
-      "id": 12
-    },
-    {
-      "name": "Animi in rem aliqua",
-      "age": "Qui sed doloremque n",
-      "email": "Ratione eveniet sit",
-      "phone": "Quae corrupti facil",
-      "id": 13
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "phone": "",
-      "id": 15
-    },
-    {
-      "name": "",
-      "age": "",
-      "email": "",
-      "phone": "",
+      "name": "Duis Aute Irure",
+      "age": "23",
+      "email": "duis.aute@example.com",
+      "phone": "+1 (555) 234-5678",
       "id": 16
     },
     {
-      "name": "Optio dolores ut no",
-      "age": "Sunt nemo qui et de",
-      "email": "Aut voluptas consequ",
-      "phone": "Cum voluptatem sunt",
-      "id": 17
+      "name": "Esse Cillum Dolore",
+      "age": "22",
+      "email": "esse.cillum@example.com",
+      "phone": "+1 (555) 456-7890",
+      "id": 18
+    },
+    {
+      "name": "Eu Fugiat Nulla",
+      "age": "20",
+      "email": "eu.fugiat@example.com",
+      "phone": "+1 (555) 567-8901",
+      "id": 19
+    },
+    {
+      "name": "Pariatur Excepteur",
+      "age": "24",
+      "email": "pariatur.excepteur@example.com",
+      "phone": "+1 (555) 678-9012",
+      "id": 20
+    },
+    {
+      "name": "Occaecat Cupidatat",
+      "age": "21",
+      "email": "occaecat.cupidatat@example.com",
+      "phone": "+1 (555) 789-0123",
+      "id": 21
+    },
+    {
+      "name": "Proident Sunt",
+      "age": "23",
+      "email": "proident.sunt@example.com",
+      "phone": "+1 (555) 890-1234",
+      "id": 22
+    },
+    {
+      "name": "Culpa Qui Officia",
+      "age": "25",
+      "email": "culpa.qui@example.com",
+      "phone": "+1 (555) 901-2345",
+      "id": 23
     }
-  ],
-  "Inst": []
+  ]
 }

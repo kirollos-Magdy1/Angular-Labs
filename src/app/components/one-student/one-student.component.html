@@ -1,17 +1,25 @@
-<tr>
-    <th scope="row">{{ oneStd.id }}</th>
-    <td>{{ oneStd.name }}</td>
-    <td>{{ oneStd.age }}</td>
-    <td><a routerLink="/students/{{ oneStd.id }}" class="link-info">details</a></td>
-    <td>
-      <a routerLink="/updatestudent/{{ oneStd.id }}" class="link-info">
-        <i class="bi bi-pencil-square text-warning"></i>
-      </a>
-    </td>
-    <td>
+<div class="col">{{ oneStd.id }}</div>
+<div class="col">{{ oneStd.name | custom }}</div>
+<div class="col">{{ oneStd.age  }}</div>
+<div class="col">
+  <a routerLink="/students/{{ oneStd.id }}" class="link-info">Details</a>
+</div>
+<div class="col">
+  <a routerLink="/updatestudent/{{ oneStd.id }}" class="link-info">
+    <i class="bi bi-pencil-square text-warning"></i>
+  </a>
+</div>
+<div class="col">
+  <a (click)="DeleteStudent(oneStd.id)"   class="link-info">
+    <i class="bi bi-trash text-danger"></i>
+  </a>
+</div>
+
+
+
+    <!-- <td>
       <a (click)="DeleteStudent(oneStd.id)" class="link-info">
         <i class="bi bi-trash text-danger"></i>
       </a>
-    </td>
-  </tr>
+    </td> -->
   
