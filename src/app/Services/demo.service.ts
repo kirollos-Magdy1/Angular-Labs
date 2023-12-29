@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class DemoService {
 
   constructor(private myClient:HttpClient) {}
-  private URL_DB = "http://localhost:3001/students";
+  private URL_DB = "http://localhost:3000/students";
 
   getAllStudents(){
     return this.myClient.get(this.URL_DB);

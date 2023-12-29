@@ -1,43 +1,21 @@
-
-
-<table class="table table-striped table-hover ">
+<table class="table table-striped table-hover">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
       <th scope="col">name</th>
       <th scope="col">age</th>
-      <th scope="col">Details  </th>
-      <th scope="col">Update  </th>
-      <th scope="col">Delete </th>
+      <th scope="col">Details</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
-
-
-@for (std of AllStudents; track std.id) {
   <tbody class="table-Success">
-    <tr>
-      <th scope="row">{{std.id}}</th>
-      <td>{{std.name}}</td>
-      <td>{{std.age}}</td>
-      <td><a routerLink="/students/{{std.id}}" class="link-info">details</a></td>
-      <td>
-          <a routerLink="/updatestudent/{{std.id}}" class="link-info">
-          <i class="bi bi-pencil-square text-warning"></i>
-          </a>      
-      </td>
-      <td>
-       
-       <a (click)="DeleteStudent(std.id)" class="link-info">
-        <i class="bi bi-trash text-danger"></i>
-        </a>      
-    </td>
-    
-    </tr>  
-    
+    <tr *ngFor="let std of AllStudents; trackBy: trackById">
+      <app-one-student [oneStd]="std"></app-one-student>
+    </tr>
   </tbody>
-}
+</table>
 
-<div class="">
-  <a class="btn btn-success btn-outline-dark m-2 position-fixed bottom-0 end-0  d-block" routerLink="/newstudent"> + </a>
+<div class="fixed-bottom end-0 m-2">
+  <a class="btn btn-success btn-outline-dark d-block" routerLink="/newstudent">+</a>
 </div>
-
